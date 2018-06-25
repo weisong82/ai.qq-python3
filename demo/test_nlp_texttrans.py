@@ -14,7 +14,7 @@ app_id = cf.get("default","app_id")
 
 
 if __name__ == '__main__':
-    str_text = '今天天气怎么样'
+    str_text = '一个演员的演技能烂到什么程度？'
     type = 0
     ai_obj = apiutil.AiPlat(app_id, app_key)
 
