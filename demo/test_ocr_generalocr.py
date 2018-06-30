@@ -3,10 +3,7 @@ import sys
 from configparser import ConfigParser
 
 sys.path.append('../SDK')
-import optparse
-import time
 import apiutil
-import base64
 import json
 
 cf = ConfigParser()

@@ -1,12 +1,8 @@
 # -*- coding: UTF-8 -*-
-import sys
-import optparse
-import time
+import json
 from configparser import ConfigParser
 
 import apiutil
-import base64
-import json
 
 cf = ConfigParser()
 cf.read("../SDK/key.conf")

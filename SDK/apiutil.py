@@ -1,11 +1,11 @@
 # -*- coding: UTF-8 -*-
-import hashlib
-import urllib
-from urllib import parse
-import urllib.request
 import base64
+import hashlib
 import json
 import time
+import urllib
+import urllib.request
+from urllib import parse
 
 url_preffix='https://api.ai.qq.com/fcgi-bin/'
 
@@ -70,6 +70,20 @@ class AiPlat(object):
         sign_str = genSignString(self.data)
         setParams(self.data, 'sign', sign_str)
         return self.invoke(self.data)
+
+    # 车牌
+    def getOcrPlateocr(self, image):
+        self.url = url_preffix + 'ocr/ocr_plateocr'
+        setParams(self.data, 'app_id', self.app_id)
+        setParams(self.data, 'app_key', self.app_key)
+        setParams(self.data, 'time_stamp', int(time.time()))
+        setParams(self.data, 'nonce_str', int(time.time()))
+        image_data = base64.b64encode(image)
+        setParams(self.data, 'image',  image_data.decode("utf-8"))
+        sign_str = genSignString(self.data)
+        setParams(self.data, 'sign', sign_str)
+        return self.invoke(self.data)
+
 
     def getNlpTextTrans(self, text, type):
         self.url = url_preffix + 'nlp/nlp_texttrans'

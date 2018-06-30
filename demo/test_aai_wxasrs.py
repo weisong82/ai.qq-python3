@@ -4,11 +4,7 @@ from configparser import ConfigParser
 
 sys.path.append('../SDK')
 import os
-import optparse
-import time
 import apiutil
-import base64
-import json
 import hashlib
 
 cf = ConfigParser()
